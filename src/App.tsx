@@ -1,12 +1,13 @@
-import { Grid } from '@mui/material';
-import './App.css';
+import { Grid } from '@mui/material'; 
 import ProductCardsContainer from './components/productCardsContainer';
 import Order from './components/order';
+
+import './App.css';
 
 function App() {
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} className={'wrapper'}>
       <Grid item xs={9} container spacing={2}>
         <ProductCardsContainer />
       </Grid>

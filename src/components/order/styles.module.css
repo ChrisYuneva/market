@@ -1,6 +1,5 @@
 .card {
-    max-width: 345px;
+    min-width: 345px;
     position: fixed;
-    top: 0;
     width: 100%;
 }

@@ -24,7 +24,12 @@ export async function getProductsList(dispatch: AppDispatch) {
         const response = await fetch('https://fakestoreapi.com/products');
         const data = await response.json();
 
-        dispatch(getProducts(data));
+        dispatch(getProducts(data.map((item: Product) => {
+            return {
+                ...item, 
+                count: Math.floor(Math.random() * (5 - 1) + 1),
+            }
+        })));
     }
     catch {
         dispatch(errorMes('Упс! Ошибка :('));
