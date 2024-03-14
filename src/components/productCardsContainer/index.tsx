@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import ProductCard from '../productCard';
 import { getProductsList } from '../../api/products';
 import { useEffect } from 'react';
@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/useRedux';
 
 function ProductCardsContainer() {
     const dispatch = useAppDispatch();
-    const { loading, products, errorMes } = useAppSelector((state) => state.products);
+    const { products } = useAppSelector(state => state.products);
 
     useEffect(() => {
       getProductsList(dispatch);
@@ -16,7 +16,7 @@ function ProductCardsContainer() {
     <>
         {
             products.map((item) => (
-                <Grid item xs={4} key={item.id}>
+                <Grid item xs={12} sm={6} md={6} lg={4} key={item.id}>
                     <ProductCard 
                         id={item.id}
                         imgSrc={item.image}
@@ -27,12 +27,7 @@ function ProductCardsContainer() {
                     />
                 </Grid>
             ))
-        }
-        {
-            !products.length && <Grid item xs={4}>
-                <Typography>Корзина пуста</Typography>
-            </Grid>
-        }
+        }   
     </>
   );
 }

@@ -1,16 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { Product } from "../../api/products";
-
-interface BasketProduct extends Product {
-    count: number
-}
-
-interface ProductsInitialState {
-    loading: boolean,
-    products: BasketProduct[],
-    total: number,
-    errorMes: string | null,
-}
+import { BasketProduct, ProductsInitialState } from "./types";
 
 const initialState: ProductsInitialState = {
     loading: false,
@@ -43,6 +32,7 @@ export const productsSlice = createSlice({
 
                 return product;
             });
+
             const total = state.products.find((product) => product.id === action.payload);
 
             if(total) {
@@ -57,6 +47,7 @@ export const productsSlice = createSlice({
 
                 return product;
             });
+
             const total = state.products.find((product) => product.id === action.payload);
 
             if(total) {
@@ -65,7 +56,9 @@ export const productsSlice = createSlice({
         },
         deleteProduct(state, action: PayloadAction<number>) {
             const total = state.products.find((product) => product.id === action.payload);
+
             state.products = state.products.filter((product) => product.id !== action.payload);
+
             if(total) {
                 state.total -= total.price*total.count;
             }

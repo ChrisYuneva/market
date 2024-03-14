@@ -1,11 +1,14 @@
 .card {
-    max-width: 345px;
+    display: flex;
+    flex-direction: column;
+    max-width: 385px;
     height: 100%;
 }
 
 .cardMedia {
-    object-fit: contain;
-    background-size: contain;
+    height: 234px;
+    padding: 8px;
+    box-sizing: border-box;
 }
 
 .cardContent {
@@ -14,7 +17,15 @@
     gap: 16px;
 }
 
+.cardActions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+}
+
 .actions {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
