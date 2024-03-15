@@ -57,6 +57,7 @@ function ProductCard({ id, imgSrc, name, description, price, count }: ProductCar
             color='warning'
             variant='outlined'
             startIcon={<DeleteIcon />}
+            aria-label='Удалить товар из корзины'
             onClick={deleteProductFromBasket}
           >
             Удалить

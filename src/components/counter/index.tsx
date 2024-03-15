@@ -27,7 +27,7 @@ function Counter({ id, count }: CounterProps) {
   return (
     <Box className={styles.counter}>
       <IconButton
-        aria-label='Уменьшить количство товара на 1'
+        aria-label='Уменьшить количество товара на 1'
         onClick={minusProductToBasket}
         disabled={count === 1}
         color='info'
@@ -36,7 +36,7 @@ function Counter({ id, count }: CounterProps) {
       </IconButton>
       <Typography variant='subtitle1'>{count}</Typography>
       <IconButton
-        aria-label='Увеличить количство товара на 1'
+        aria-label='Увеличить количество товара на 1'
         onClick={plusProductToBasket}
         disabled={count === 10}
         color='info'
