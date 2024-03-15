@@ -16,7 +16,7 @@ function ProductCardsContainer() {
     <>
         {
             products.map((item) => (
-                <Grid item xs={12} sm={6} md={6} lg={4} key={item.id}>
+                <Grid item xs={12} sm={12} md={6} lg={4} key={item.id}>
                     <ProductCard 
                         id={item.id}
                         imgSrc={item.image}

@@ -1,4 +1,10 @@
 .card {
     position: fixed;
-    width: 24%;
+    min-width: 24%;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }

@@ -19,7 +19,7 @@ function Order() {
       {
         !loading && !errorMes && (
           <Card className={styles.card}>
-            <CardContent>
+            <CardContent className={styles.cardContent}>
               <Typography variant='h5'>
                 Итого: {Math.abs(total).toFixed(2)} руб.
               </Typography>

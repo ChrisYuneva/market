@@ -13,10 +13,10 @@ function App() {
     <div className={'wrapper'}>
       { loading && <Loading isLoading={loading} /> }
       <Grid container spacing={2}>
-        <Grid item xs={9} container rowSpacing={5} columnSpacing={2}>
+        <Grid item xs={6} sm={9} container rowSpacing={5} columnSpacing={2}>
           <ProductCardsContainer />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={6} sm={3}>
           <Order />
         </Grid>
       </Grid>
